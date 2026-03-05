@@ -1,0 +1,182 @@
+/* =========================================
+   SOLOJAT – CSS OFICIAL
+   Mantém Tailwind CDN como base
+========================================= */
+
+/* -----------------------------
+   VARIÁVEIS GLOBAIS
+----------------------------- */
+:root {
+    --navy: #001A33;
+    --gold: #D4AF37;
+}
+
+/* -----------------------------
+   BASE
+----------------------------- */
+html {
+    scroll-behavior: smooth !important;
+}
+
+body { 
+    font-family: 'Inter', sans-serif !important;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    background-color: #ffffff;
+    color: #1e293b;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+/* -----------------------------
+   CORES CUSTOM (override Tailwind quando necessário)
+----------------------------- */
+.text-gold { color: var(--gold) !important; }
+.bg-gold { background-color: var(--gold) !important; }
+.text-navy { color: var(--navy) !important; }
+.bg-navy { background-color: var(--navy) !important; }
+
+/* -----------------------------
+   BOTÕES
+----------------------------- */
+.btn-minimal {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 10px;
+    font-weight: 800;
+    border: 1px solid transparent;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--gold) !important;
+    border-color: var(--gold) !important;
+    color: var(--navy) !important;
+}
+
+.btn-primary:hover {
+    background-color: transparent !important;
+    color: var(--gold) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.btn-outline {
+    border-color: rgba(255,255,255,0.4) !important;
+    color: white !important;
+}
+
+.btn-outline:hover {
+    background-color: white !important;
+    color: var(--navy) !important;
+}
+
+/* -----------------------------
+   HERO
+----------------------------- */
+.hero-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+}
+
+/* -----------------------------
+   REVEAL ANIMATION
+----------------------------- */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity, transform;
+}
+
+.reveal.active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* -----------------------------
+   LINK "LEARN MORE"
+----------------------------- */
+.learn-more {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 800;
+    color: var(--gold) !important;
+    margin-top: 1.5rem;
+    display: inline-block;
+    border-bottom: 2px solid var(--gold) !important;
+    padding-bottom: 4px;
+    transition: all 0.3s ease;
+}
+
+.learn-more:hover {
+    color: var(--navy) !important;
+    border-color: var(--navy) !important;
+    transform: translateX(8px);
+}
+
+/* -----------------------------
+   DROPDOWN
+----------------------------- */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 260px;
+    background-color: #ffffff !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid #f1f5f9;
+    padding: 1.5rem 0;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* -----------------------------
+   FOOTER
+----------------------------- */
+footer,
+#contato {
+    background-color: var(--navy) !important;
+    color: #ffffff !important;
+}
+
+footer h4 {
+    color: var(--gold) !important;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin-bottom: 1.5rem;
+}
+
+footer p,
+footer li,
+footer a {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 12px;
+}
+
+footer iframe {
+    filter: grayscale(1) invert(0.9) contrast(1.1) brightness(0.8);
+    opacity: 0.4;
+    transition: all 0.8s ease;
+}
+
+footer .map-container:hover iframe {
+    filter: grayscale(0.2) invert(0) contrast(1.1) brightness(1);
+    opacity: 0.9;
+}
