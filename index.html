@@ -89,14 +89,13 @@
                 </p>
                 
                 <div class="flex flex-col md:flex-row gap-6 reveal" style="transition-delay: 0.4s">
-                    <!-- Ajuste WhatsApp: Frase sinalizadora adicionada -->
                     <a href="https://wa.me/5511963182364?text=Olá!%20Vim%20pelo%20site%20da%20Solojat%20e%20gostaria%20de%20solicitar%20um%20orçamento." class="btn-minimal btn-primary py-4 px-10 text-decoration-none">Solicitar Orçamento</a>
                     <a href="#servicos" class="btn-minimal btn-outline py-4 px-10 border-white/30 text-decoration-none">Ver todos os serviços</a>
                 </div>
             </div>
         </div>
         
-        <!-- Botão Flutuante WhatsApp: Frase sinalizadora adicionada -->
+        <!-- Botão Flutuante WhatsApp -->
         <a href="https://wa.me/5511963182364?text=Olá!%20Vim%20pelo%20site%20da%20Solojat%20e%20gostaria%20de%20solicitar%20um%20orçamento." class="fixed bottom-8 right-8 z-[100] bg-[#25D366] p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center">
             <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.845-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.161 1.237 8.404 3.48s3.481 5.229 3.481 8.404c0 6.556-5.332 11.888-11.888 11.888-2.015 0-3.987-.512-5.733-1.482l-6.251 1.707zm5.952-4.082c1.554.922 3.14 1.411 4.887 1.411 5.4 0 9.791-4.391 9.791-9.791s-4.392-9.791-9.791-9.791c-5.4 0-9.791 4.391-9.791 9.791 0 2.002.612 3.868 1.77 5.438l-.998 3.645 3.732-.973zm11.751-6.52c-.279-.14-1.647-.812-1.903-.905-.255-.093-.441-.14-.627.14-.186.279-.72.905-.883 1.092-.163.186-.325.21-.604.07-.279-.14-1.18-.435-2.247-1.387-.83-.741-1.39-1.655-1.552-1.934-.163-.279-.017-.43.123-.569.126-.125.279-.325.418-.488.14-.163.186-.279.279-.465.093-.186.046-.349-.023-.488-.07-.14-.627-1.511-.859-2.07-.226-.543-.454-.47-.627-.47h-.534c-.186 0-.488.07-.743.349-.256.279-.976.953-.976 2.325s1.023 2.697 1.162 2.883c.14.186 2.013 3.074 4.877 4.312.681.295 1.213.471 1.626.602.684.218 1.307.187 1.8.114.549-.081 1.647-.674 1.88-1.325.233-.651.233-1.21.163-1.325-.07-.116-.256-.186-.535-.326z"/></svg>
         </a>
@@ -218,8 +217,8 @@
         <div class="container mx-auto px-6 md:px-12">
             <div class="grid lg:grid-cols-4 gap-16 mb-24 text-left">
                 <div class="lg:col-span-1">
-                    <!-- Ajuste Cirúrgico Logo do Rodapé: Removidos filtros que causavam o "quadrado branco" e garantida a transparência -->
-                    <img src="/assets/img/logo.png" alt="Solojat Engenharia" class="h-10 mb-8 w-auto object-contain grayscale invert brightness-200 opacity-90">
+                    <!-- Ajuste Cirúrgico Logo do Rodapé: Inversão + Blend Mode para remover o fundo branco da imagem sem criar quadrado sólido -->
+                    <img src="/assets/img/logo.png" alt="Solojat Engenharia" class="h-10 mb-8 w-auto object-contain" style="filter: invert(1) grayscale(1) brightness(1.8); mix-blend-mode: screen;">
                     <p class="text-xs text-slate-400 leading-relaxed italic">Engenharia geotécnica com rigor normativo e precisão técnica. Sede na Aclimação, atendendo toda a Grande SP.</p>
                 </div>
                 <div>
