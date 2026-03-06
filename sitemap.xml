@@ -1,134 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Home Page -->
-  <url>
-    <loc>https://solojat.com.br/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
 
-  <!-- SERVIÇOS PRINCIPAIS (Prioridade 0.95) -->
-  <url>
-    <loc>https://solojat.com.br/sondagem-de-solo-spt/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://solojat.com.br/muro-de-arrimo/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://solojat.com.br/sondagem-ambiental/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://solojat.com.br/solo-grampeado/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://solojat.com.br/cortina-atirantada/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://solojat.com.br/reformas-tecnicas/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
+<url>
+  <loc>https://www.solojat.com.br/</loc>
+  <lastmod>2026-03-06</lastmod>
+  <priority>1.0</priority>
+</url>
 
-  <!-- SERVIÇO + PRAÇA PRINCIPAL (SP - Prioridade 0.9) -->
-  <url>
-    <loc>https://solojat.com.br/sondagem-de-solo-spt/sao-paulo/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://solojat.com.br/muro-de-arrimo/sao-paulo/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+<url>
+  <loc>https://www.solojat.com.br/sondagem-de-solo-spt/</loc>
+  <lastmod>2026-03-06</lastmod>
+  <priority>0.9</priority>
+</url>
 
-  <!-- SERVIÇO + OUTRAS CIDADES/REGIÕES (Prioridade 0.8) -->
-  <url>
-    <loc>https://solojat.com.br/sondagem-de-solo-spt/abc-paulista/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://solojat.com.br/sondagem-de-solo-spt/barueri/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://solojat.com.br/muro-de-arrimo/guarulhos/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://solojat.com.br/muro-de-arrimo/osasco/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+<url>
+  <loc>https://www.solojat.com.br/sondagem-ambiental/</loc>
+  <lastmod>2026-03-06</lastmod>
+  <priority>0.8</priority>
+</url>
 
-  <!-- SERVIÇO + BAIRROS (Prioridade 0.7) -->
-  <url>
-    <loc>https://solojat.com.br/sondagem-de-solo-spt/sao-paulo/aclimacao/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://solojat.com.br/sondagem-de-solo-spt/sao-paulo/vila-mariana/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://solojat.com.br/sondagem-de-solo-spt/barueri/alphaville/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://solojat.com.br/muro-de-arrimo/sao-paulo/morumbi/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://solojat.com.br/muro-de-arrimo/sao-paulo/pinheiros/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+<url>
+  <loc>https://www.solojat.com.br/muro-de-arrimo/</loc>
+  <lastmod>2026-03-06</lastmod>
+  <priority>0.9</priority>
+</url>
 
-  <!-- INSTITUCIONAL (Prioridade 0.6) -->
-  <url>
-    <loc>https://solojat.com.br/empresa/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://solojat.com.br/contato/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+<url>
+  <loc>https://www.solojat.com.br/solo-grampeado/</loc>
+  <lastmod>2026-03-06</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://www.solojat.com.br/cortina-atirantada/</loc>
+  <lastmod>2026-03-06</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://www.solojat.com.br/reforco-de-fundacao/</loc>
+  <lastmod>2026-03-06</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://www.solojat.com.br/empresa/</loc>
+  <lastmod>2026-03-06</lastmod>
+  <priority>0.6</priority>
+</url>
+
+<url>
+  <loc>https://www.solojat.com.br/contato/</loc>
+  <lastmod>2026-03-06</lastmod>
+  <priority>0.6</priority>
+</url>
+
+<url>
+  <loc>https://www.solojat.com.br/sondagem-de-solo-spt/abc-paulista/</loc>
+  <lastmod>2026-03-06</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://www.solojat.com.br/sondagem-de-solo-spt/barueri/</loc>
+  <lastmod>2026-03-06</lastmod>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://www.solojat.com.br/sondagem-de-solo-spt/barueri/alphaville/</loc>
+  <lastmod>2026-03-06</lastmod>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://www.solojat.com.br/sondagem-de-solo-spt/sao-paulo/aclimacao/</loc>
+  <lastmod>2026-03-06</lastmod>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://www.solojat.com.br/sondagem-de-solo-spt/sao-paulo/vila-mariana/</loc>
+  <lastmod>2026-03-06</lastmod>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://www.solojat.com.br/muro-de-arrimo/guarulhos/</loc>
+  <lastmod>2026-03-06</lastmod>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://www.solojat.com.br/muro-de-arrimo/osasco/</loc>
+  <lastmod>2026-03-06</lastmod>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://www.solojat.com.br/muro-de-arrimo/sao-paulo/morumbi/</loc>
+  <lastmod>2026-03-06</lastmod>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://www.solojat.com.br/muro-de-arrimo/sao-paulo/pinheiros/</loc>
+  <lastmod>2026-03-06</lastmod>
+  <priority>0.7</priority>
+</url>
+
 </urlset>
