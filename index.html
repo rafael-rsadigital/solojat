@@ -135,19 +135,18 @@
             width: 100%;
         }
 
-        /* Fallback para imagem de fundo caso não carregue */
         .hero-overlay {
             background: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.8));
         }
     </style>
 
-    <!-- Google tag (gtag.js) --> 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18107504988"> </script> 
-    <script> 
-        window.dataLayer = window.dataLayer || []; 
-        function gtag(){dataLayer.push(arguments);} 
-        gtag('js', new Date()); 
-        gtag('config', 'AW-18107504988'); 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18107504988"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18107504988');
     </script>
 </head>
 <body class="bg-white">
@@ -361,36 +360,44 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Scripts de Rastreamento e Funcionalidades -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-            }, { threshold: 0.15 });
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    // Função de conversão do Google Ads
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-18107504988/gQXKCIut96AcENyyqrpD',
+          'value': 1.0,
+          'currency': 'BRL',
+          'event_callback': callback
+      });
+      return false;
+    }
 
-            // Rastreamento de conversão WhatsApp
-            document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"]').forEach(function (e) {
-                e.addEventListener('click', function () {
-                    if (typeof gtag === 'function') {
-                        gtag('event', 'conversion', {'send_to': 'AW-18107504988/gQXKCIut96AcENyyqrpD'});
-                    }
+    // Ouvinte único para cliques em links de WhatsApp (wa.me ou whatsapp.com)
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('a[href*="whatsapp"], a[href*="wa.me"]').forEach(function (link) {
+            link.addEventListener('click', function () {
+                console.log('Clique WhatsApp detectado');
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-18107504988/gQXKCIut96AcENyyqrpD'
                 });
             });
         });
 
-        function gtag_report_conversion(url) {
-            var callback = function () {
-                if (typeof(url) != 'undefined') { window.location = url; }
-            };
-            gtag('event', 'conversion', {
-                'send_to': 'AW-18107504988/gQXKCIut96AcENyyqrpD',
-                'value': 1.0,
-                'currency': 'BRL',
-                'event_callback': callback
+        // Intersection Observer para animações de reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { 
+                if (entry.isIntersecting) entry.target.classList.add('active'); 
             });
-            return false;
-        }
+        }, { threshold: 0.15 });
+        
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
     </script>
 </body>
 </html>
