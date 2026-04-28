@@ -29,15 +29,12 @@
           "description": "Engenharia especializada em Solo Grampeado, Contenção de Taludes e Estabilidade de Encostas em São Paulo.",
           "image": "https://solojat.com.br/assets/img/hero-bg.jpeg",
           "priceRange": "$$$$",
-          "sameAs": [
-            "https://maps.app.goo.gl/vCa5htJMpNKrNxgp7"
-          ],
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Rua Pedra Azul, 648",
+            "streetAddress": "Avenida Sapopemba, 18355",
             "addressLocality": "São Paulo",
             "addressRegion": "SP",
-            "postalCode": "04109-000",
+            "postalCode": "03989-000",
             "addressCountry": "BR"
           },
           "geo": {
@@ -54,99 +51,192 @@
             { "@type": "City", "name": "Santo André" },
             { "@type": "City", "name": "São Bernardo do Campo" }
           ]
-        },
-        {
-          "@type": "Service",
-          "@id": "https://solojat.com.br/solo-grampeado/#service",
-          "serviceType": "Execução de Solo Grampeado",
-          "provider": { "@id": "https://solojat.com.br/#organization" },
-          "areaServed": {
-            "@type": "AdministrativeArea",
-            "name": "Estado de São Paulo"
-          },
-          "description": "Contenção de taludes e encostas através da instalação de chumbadores e aplicação de concreto projetado para prevenção de deslizamentos.",
-          "offers": {
-            "@type": "Offer",
-            "availability": "https://schema.org/InStock"
-          }
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "O que é solo grampeado?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "É uma técnica de contenção ativa que utiliza grampos (chumbadores) introduzidos no solo e uma face de concreto projetado para estabilizar taludes de forma segura."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Quando escolher Solo Grampeado e não Muro de Arrimo?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "O solo grampeado é ideal para contenções profundas, terrenos com topografia íngreme e quando se busca rapidez executiva sem a necessidade de grandes fundações para a contenção."
-              }
-            }
-          ]
         }
       ]
     }
     </script>
 
-    <!-- Tailwind & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- CSS EXTERNO -->
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        :root {
+            --navy: #0a192f;
+            --gold: #c5a059;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .bg-navy { background-color: var(--navy); }
+        .text-navy { color: var(--navy); }
+        .text-gold { color: var(--gold); }
+        .bg-gold { background-color: var(--gold); }
+        .border-gold { border-color: var(--gold); }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 240px;
+            z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .btn-minimal {
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--gold);
+            color: var(--navy);
+        }
+
+        .btn-primary:hover {
+            background-color: white;
+            color: var(--navy);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--navy);
+        }
+
+        .learn-more {
+            display: inline-block;
+            margin-top: 1.5rem;
+            font-size: 9px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            position: relative;
+            text-decoration: none;
+        }
+
+        .learn-more::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 20px;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .learn-more:hover::after {
+            width: 100%;
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18107504988"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18107504988');
+    </script>
 </head>
 <body class="bg-white">
 
-    <!-- Cabeçalho -->
-    <header class="bg-white border-b border-slate-100 sticky top-0 z-50">
+    <!-- Cabeçalho (Padrão Master) -->
+    <header id="main-header" class="sticky top-0 left-0 w-full z-50 bg-white border-b border-slate-100 transition-all duration-300">
         <div class="container mx-auto px-6 md:px-12 flex justify-between items-center py-5">
-            <a href="../" class="flex items-center">
-                <img src="../assets/img/logo.png" alt="Solojat Engenharia" class="h-8 md:h-10 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <span class="hidden font-black tracking-tighter text-navy text-xl">SOLOJAT</span>
+            <a href="../" class="flex items-center text-decoration-none">
+                <img src="../assets/img/logo.png" alt="Solojat Engenharia" class="h-[64px] md:h-[80px] w-auto object-contain">
             </a>
+            
             <nav class="hidden lg:flex space-x-10 items-center">
                 <div class="flex space-x-8 text-[10px] font-bold uppercase tracking-[0.2em] text-navy/70">
                     <a href="../" class="hover:text-gold transition-colors text-decoration-none">Início</a>
-                    <a href="../sondagem-de-solo-spt/" class="hover:text-gold transition-colors text-decoration-none text-navy">Sondagem SPT</a>
-                    <a href="./" class="text-gold text-decoration-none font-bold">Solo Grampeado</a>
-                    <a href="../muro-de-arrimo/" class="hover:text-gold transition-colors text-decoration-none text-navy">Muro de Arrimo</a>
+                    <a href="../sondagem-de-solo-spt/" class="hover:text-gold transition-colors text-decoration-none">Sondagem de Solo</a>
+                    
+                    <div class="relative dropdown group">
+                        <a href="javascript:void(0)" class="hover:text-gold transition-colors flex items-center cursor-pointer text-decoration-none text-gold font-bold">
+                            Serviços
+                            <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </a>
+                        <div class="dropdown-menu shadow-xl text-left border-t-2 border-gold">
+                            <a href="../sondagem-de-solo-spt/" class="block px-6 py-2 hover:bg-slate-50 hover:text-gold transition-colors text-navy text-xs uppercase font-bold text-decoration-none">Sondagem SPT</a>
+                            <a href="../sondagem-ambiental/" class="block px-6 py-2 hover:bg-slate-50 hover:text-gold transition-colors text-navy text-xs uppercase font-bold text-decoration-none">Sondagem Ambiental</a>
+                            <a href="../muro-de-arrimo/" class="block px-6 py-2 hover:bg-slate-50 hover:text-gold transition-colors text-navy text-xs uppercase font-bold text-decoration-none">Muro de Arrimo</a>
+                            <a href="./" class="block px-6 py-2 hover:bg-slate-50 hover:text-gold transition-colors text-navy text-xs uppercase font-bold text-decoration-none">Solo Grampeado</a>
+                            <a href="../cortina-atirantada/" class="block px-6 py-2 hover:bg-slate-50 hover:text-gold transition-colors text-navy text-xs uppercase font-bold text-decoration-none">Cortina Atirantada</a>
+                            <a href="../reforco-de-fundacao/" class="block px-6 py-2 hover:bg-slate-50 hover:text-gold transition-colors text-navy text-xs uppercase font-bold text-decoration-none">Reforço de Fundação</a>
+                        </div>
+                    </div>
+                    <a href="../empresa/" class="hover:text-gold transition-colors text-decoration-none font-bold text-navy">Empresa</a>
                 </div>
-                <a href="https://wa.me/5511963182364?text=Olá!%20Vim%20pelo%20site%20da%20Solojat%20e%20gostaria%20de%20um%20orçamento%20para%20Solo%20Grampeado." class="bg-navy text-white px-6 py-2 text-[10px] font-bold uppercase tracking-widest hover:bg-gold hover:text-navy transition-all text-decoration-none font-bold text-center">Orçamento</a>
+                <a href="https://wa.me/5511963182364?text=Olá!%20Vim%20pelo%20site%20da%20Solojat%20e%20gostaria%20de%20um%20orçamento%20para%20Solo%20Grampeado." class="bg-navy text-white px-6 py-2 text-[10px] font-bold uppercase tracking-widest hover:bg-gold hover:text-navy transition-all text-decoration-none">Orçamento</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="lg:hidden text-navy p-2">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu-container" class="hidden lg:hidden bg-white border-t border-slate-100 max-h-[70vh] overflow-y-auto">
+            <nav class="flex flex-col p-6 space-y-4">
+                <a href="../" class="text-xs font-bold uppercase tracking-widest text-navy">Início</a>
+                <a href="../sondagem-de-solo-spt/" class="text-xs font-bold uppercase tracking-widest text-navy">Sondagem de Solo</a>
+                <div class="space-y-3 pl-4 border-l border-gold/30">
+                    <span class="text-[10px] uppercase text-slate-400 font-bold tracking-widest block">Nossos Serviços</span>
+                    <a href="../sondagem-de-solo-spt/" class="block text-[11px] font-bold text-navy/70">Sondagem SPT</a>
+                    <a href="../sondagem-ambiental/" class="block text-[11px] font-bold text-navy/70">Sondagem Ambiental</a>
+                    <a href="../muro-de-arrimo/" class="block text-[11px] font-bold text-navy/70">Muro de Arrimo</a>
+                    <a href="./" class="block text-[11px] font-bold text-navy/70">Solo Grampeado</a>
+                    <a href="../reforco-de-fundacao/" class="block text-[11px] font-bold text-navy/70">Reforço de Fundação</a>
+                </div>
+                <a href="../empresa/" class="text-xs font-bold uppercase tracking-widest text-navy">Empresa</a>
+                <a href="https://wa.me/5511963182364?text=Olá!%20Vim%20pelo%20site%20da%20Solojat%20e%20gostaria%20de%20um%20orçamento%20para%20Solo%20Grampeado." class="bg-navy text-white text-center py-3 text-xs font-bold uppercase tracking-widest">Orçamento</a>
             </nav>
         </div>
     </header>
 
-    <!-- BREADCRUMB VISÍVEL -->
-    <nav class="bg-slate-50 border-b border-slate-100 py-3">
-        <div class="container mx-auto px-6 md:px-12">
-            <div class="flex items-center space-x-2 text-[9px] uppercase tracking-widest text-slate-400 font-bold">
-                <a href="../" class="hover:text-gold transition text-decoration-none">Início</a>
-                <span>/</span>
-                <span class="text-navy">Solo Grampeado</span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- HERO SERVIÇO -->
-    <section class="relative py-24 bg-navy text-white overflow-hidden text-left">
+    <!-- HERO SERVIÇO (Breadcrumb removido conforme padrão limpo) -->
+    <section class="relative py-24 bg-navy text-white overflow-hidden text-left border-b border-white/5">
         <div class="absolute inset-0 opacity-10">
             <div class="absolute inset-0 bg-[url('../assets/img/hero-bg.jpeg')] bg-cover bg-center grayscale"></div>
         </div>
         <div class="container mx-auto px-6 md:px-12 relative z-10">
             <div class="max-w-4xl">
+                <div class="w-12 h-[1px] bg-gold mb-10 reveal"></div>
                 <span class="text-gold text-[10px] font-bold uppercase tracking-[0.4em] block mb-4">Engenharia de Contenção de Encostas</span>
-                <h1 class="text-4xl md:text-6xl font-black mb-8 leading-tight">Solo Grampeado em São Paulo <br><span class="text-gold italic">para Contenção de Taludes</span></h1>
-                <p class="text-slate-300 text-lg font-light leading-relaxed max-w-2xl mb-8">
+                <h1 class="text-4xl md:text-6xl font-black mb-8 leading-tight reveal">Solo Grampeado em São Paulo <br><span class="text-gold italic">para Contenção de Taludes</span></h1>
+                <p class="text-slate-300 text-lg font-light leading-relaxed max-w-2xl mb-8 reveal">
                     Solução de engenharia de elite para a <strong>contenção de encostas</strong> e proteção de cortes de terreno, prevenindo contra <strong>deslizamentos de terra</strong> em áreas urbanas de São Paulo.
                 </p>
-                <div class="flex gap-8 text-white/50 text-[9px] uppercase tracking-[0.2em] font-bold">
+                <div class="flex gap-8 text-white/50 text-[9px] uppercase tracking-[0.2em] font-bold reveal">
                     <span>Concreto Projetado</span>
                     <span>Grampos em Aço (NBR 11682)</span>
                     <span>Projetos com ART</span>
@@ -155,7 +245,7 @@
         </div>
     </section>
 
-    <!-- CONTEÚDO TÉCNICO PROFUNDO -->
+    <!-- CONTEÚDO TÉCNICO -->
     <section class="py-24 bg-white reveal text-left">
         <div class="container mx-auto px-6 md:px-12">
             <div class="grid lg:grid-cols-3 gap-16">
@@ -167,11 +257,10 @@
                             O <strong>Solo Grampeado</strong> é uma das técnicas mais eficazes da engenharia geotécnica moderna para a contenção definitiva de solo. Esta metodologia destaca-se pela sua versatilidade e rapidez na <strong>execução de solo grampeado</strong> em áreas urbanas, onde a topografia acidentada e os períodos de chuvas intensas exigem soluções robustas. É a escolha preferencial para evitar <strong>deslizamentos de terra</strong> e estabilizar cortes verticais em terrenos densamente ocupados.
                         </p>
                         <p class="text-slate-600 mb-6 font-light leading-relaxed">
-                            Na Solojat Engenharia, a execução baseia-se numa análise prévia da <a href="../sondagem-de-solo-spt/" class="text-gold font-bold hover:underline">Sondagem de Solo SPT</a>. A partir dos dados técnicos, dimensionamos a malha de grampos e a espessura do <strong>concreto projetado</strong> para garantir a segurança da obra e do entorno. Conheça o <a href="../empresa/" class="text-gold font-bold hover:underline">perfil técnico da nossa equipa</a> em projetos de grande porte.
+                            Na Solojat Engenharia, a execução baseia-se numa análise prévia da <a href="../sondagem-de-solo-spt/" class="text-gold font-bold hover:underline">Sondagem de Solo SPT</a>. A partir dos dados técnicos, dimensionamos a malha de grampos e a espessura do <strong>concreto projetado</strong> para garantir a segurança da obra e do entorno. Conheça o <a href="../empresa/" class="text-gold font-bold hover:underline">perfil técnico da nossa equipe</a> em projetos de grande porte.
                         </p>
                     </div>
 
-                    <!-- Diferenciação Estratégica -->
                     <div class="p-8 border border-slate-100 bg-slate-50/50 rounded-sm">
                         <h3 class="text-xl font-bold text-navy mb-4 uppercase tracking-tighter">Quando escolher Solo Grampeado e não Muro de Arrimo?</h3>
                         <p class="text-slate-600 mb-4 font-light leading-relaxed text-sm">
@@ -182,9 +271,8 @@
                         </p>
                     </div>
 
-                    <!-- Processo Executivo -->
                     <div class="bg-slate-50 p-10 border-l-4 border-gold">
-                        <h3 class="text-2xl font-bold text-navy mb-6">Etapas da Execução de Solo Grampeado</h3>
+                        <h3 class="text-2xl font-bold text-navy mb-6 italic">Etapas da Execução de Solo Grampeado</h3>
                         <div class="space-y-6">
                             <div class="flex gap-4">
                                 <span class="bg-gold text-navy font-black px-3 py-1 h-fit text-sm">01</span>
@@ -196,8 +284,8 @@
                             <div class="flex gap-4">
                                 <span class="bg-gold text-navy font-black px-3 py-1 h-fit text-sm">02</span>
                                 <div>
-                                    <h4 class="font-bold text-navy text-sm uppercase font-bold">Instalação dos Grampos</h4>
-                                    <p class="text-xs text-slate-500 italic font-bold text-navy/70">Perfuração e injeção de calda de cimento para fixar as barras de aço (chumbadores) no solo.</p>
+                                    <h4 class="font-bold text-navy text-sm uppercase">Instalação dos Grampos</h4>
+                                    <p class="text-xs text-slate-500 italic">Perfuração e injeção de calda de cimento para fixar as barras de aço (chumbadores) no solo.</p>
                                 </div>
                             </div>
                             <div class="flex gap-4">
@@ -210,10 +298,9 @@
                         </div>
                     </div>
 
-                    <!-- Seção de Orçamento -->
                     <div>
-                        <h3 class="text-2xl font-bold text-navy mb-6 font-bold">Quanto custa o Solo Grampeado em São Paulo?</h3>
-                        <p class="text-slate-600 mb-6 font-light leading-relaxed">
+                        <h3 class="text-2xl font-bold text-navy mb-6 italic">Quanto custa o Solo Grampeado em São Paulo?</h3>
+                        <p class="text-slate-600 mb-6 font-light leading-relaxed text-sm">
                             O investimento em solo grampeado é altamente competitivo para contenções acima de 4 metros de altura. O orçamento é calculado considerando:
                         </p>
                         <div class="grid md:grid-cols-2 gap-8">
@@ -227,28 +314,28 @@
                                 </ul>
                             </div>
                             <div class="p-6 border border-slate-100 bg-white shadow-sm">
-                                <h4 class="font-bold text-navy mb-2 uppercase text-xs tracking-widest font-bold">Prevenção de Riscos</h4>
+                                <h4 class="font-bold text-navy mb-2 uppercase text-xs tracking-widest">Prevenção de Riscos</h4>
                                 <p class="text-xs text-slate-500 font-light">O solo grampeado é a solução definitiva para evitar patologias e prejuízos com deslizamentos em encostas urbanas.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Sidebar / CTA (Sticky) -->
+                <!-- Sidebar de Orçamento (Preservada integralmente conforme Home/Arrimo) -->
                 <div class="lg:col-span-1">
-                    <div class="bg-navy p-10 text-white sticky top-32 text-left">
-                        <h3 class="text-gold font-black text-2xl mb-6 tracking-tighter italic text-left">Orçamento de Solo Grampeado</h3>
-                        <p class="text-sm text-slate-300 mb-8 font-light text-left">Equipa técnica pronta para avaliação de taludes em SP, Alphaville e Região do ABC.</p>
-                        <a href="https://wa.me/5511963182364?text=Olá!%20Vim%20pelo%20site%20da%20Solojat%20e%20gostaria%20de%20um%20orçamento%20para%20Solo%20Grampeado." class="btn-minimal btn-primary w-full py-4 text-center text-decoration-none font-bold">WhatsApp Engenharia</a>
+                    <div class="bg-navy p-10 text-white sticky top-32 text-left shadow-2xl">
+                        <h3 class="text-gold font-black text-2xl mb-6 tracking-tighter italic">Orçamento de Solo Grampeado</h3>
+                        <p class="text-sm text-slate-300 mb-8 font-light italic">Equipe técnica pronta para avaliação de taludes em SP, Alphaville e Região do ABC.</p>
+                        <a href="https://wa.me/5511963182364?text=Olá!%20Vim%20pelo%20site%20da%20Solojat%20e%20gostaria%20de%20um%20orçamento%20para%20Solo%20Grampeado." class="btn-minimal btn-primary w-full py-4 text-center text-decoration-none font-bold uppercase">WhatsApp Engenharia</a>
                         
-                        <div class="mt-12 space-y-6 text-left">
-                            <div class="border-b border-white/10 pb-4">
+                        <div class="mt-12 space-y-6">
+                            <div class="border-b border-white/10 pb-4 text-left">
                                 <h4 class="text-[10px] uppercase tracking-widest text-gold mb-2 font-bold">NBR 11682</h4>
-                                <p class="text-xs italic">Projetos dimensionados conforme <strong>ABNT NBR 11682</strong> e normas complementares.</p>
+                                <p class="text-xs text-slate-300">Projetos dimensionados conforme ABNT NBR 11682 e normas complementares.</p>
                             </div>
-                            <div class="border-b border-white/10 pb-4">
+                            <div class="border-b border-white/10 pb-4 text-left">
                                 <h4 class="text-[10px] uppercase tracking-widest text-gold mb-2 font-bold">Mobilização Rápida</h4>
-                                <p class="text-xs">Logística otimizada para obras emergenciais ou preventivas na Grande São Paulo.</p>
+                                <p class="text-xs text-slate-300">Logística otimizada para obras emergenciais ou preventivas na Grande São Paulo.</p>
                             </div>
                         </div>
                     </div>
@@ -257,22 +344,22 @@
         </div>
     </section>
 
-    <!-- ÁREAS DE ATUAÇÃO -->
-    <section class="py-24 bg-slate-50 reveal text-center">
+    <!-- ÁREAS DE ATENDIMENTO -->
+    <section class="py-24 bg-slate-50 reveal text-center border-y border-slate-100">
         <div class="container mx-auto px-6 md:px-12 text-center">
             <h2 class="text-3xl font-bold text-navy mb-4 italic">Onde Atuamos em Contenção</h2>
             <p class="text-slate-500 mb-12 max-w-2xl mx-auto font-light text-center">Atendimento técnico em áreas de topografia complexa:</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
                 <div class="p-8 bg-white border border-slate-200">
-                    <span class="block text-navy font-bold uppercase text-[10px] tracking-widest mb-2 font-bold group-hover:text-gold transition">São Paulo Capital</span>
+                    <span class="block text-navy font-bold uppercase text-[10px] tracking-widest mb-2">São Paulo Capital</span>
                     <p class="text-[11px] text-slate-400 italic">Contenção de taludes em subsolos e encostas urbanas.</p>
                 </div>
                 <div class="p-8 bg-white border border-slate-200">
-                    <span class="block text-navy font-bold uppercase text-[10px] tracking-widest mb-2 font-bold group-hover:text-gold transition">Alphaville e Barueri</span>
+                    <span class="block text-navy font-bold uppercase text-[10px] tracking-widest mb-2">Alphaville e Barueri</span>
                     <p class="text-[11px] text-slate-400 italic">Proteção de encostas em condomínios de alto padrão.</p>
                 </div>
                 <div class="p-8 bg-white border border-slate-200">
-                    <span class="block text-navy font-bold uppercase text-[10px] tracking-widest mb-2 font-bold group-hover:text-gold transition">ABC e Guarulhos</span>
+                    <span class="block text-navy font-bold uppercase text-[10px] tracking-widest mb-2">ABC e Guarulhos</span>
                     <p class="text-[11px] text-slate-400 italic">Solo grampeado para infraestruturas logísticas.</p>
                 </div>
             </div>
@@ -282,40 +369,93 @@
     <!-- SEÇÃO DE FAQ -->
     <section class="py-24 bg-white reveal text-left">
         <div class="container mx-auto px-6 md:px-12 max-w-4xl">
-            <h2 class="text-3xl font-bold text-navy mb-12 text-center italic font-bold">Dúvidas Frequentes: Contenção de Encostas</h2>
+            <h2 class="text-3xl font-bold text-navy mb-12 text-center italic">Dúvidas Frequentes: Contenção de Encostas</h2>
             <div class="space-y-8">
-                <div class="border-b border-slate-100 pb-6">
+                <div class="border-b border-slate-100 pb-6 text-left">
                     <h3 class="text-lg font-bold text-navy mb-2 italic">O solo grampeado é permanente?</h3>
                     <p class="text-slate-500 text-sm font-light leading-relaxed">Sim. Os grampos são protegidos contra corrosão por calda de cimento e o concreto projetado confere a proteção final da face, garantindo décadas de estabilidade.</p>
                 </div>
-                <div class="border-b border-slate-100 pb-6">
+                <div class="border-b border-slate-100 pb-6 text-left">
                     <h3 class="text-lg font-bold text-navy mb-2 italic">Solo grampeado precisa de manutenção?</h3>
-                    <p class="text-slate-500 text-sm font-light leading-relaxed font-bold text-navy/70">A manutenção limita-se à limpeza dos drenos para evitar o acúmulo de água atrás da contenção.</p>
+                    <p class="text-slate-500 text-sm font-light leading-relaxed">A manutenção limita-se à limpeza dos drenos para evitar o acúmulo de água atrás da contenção.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-navy text-white py-20 text-center border-t border-white/5">
+    <!-- Rodapé (Padronizado Master) -->
+    <footer class="bg-navy text-white pt-24 pb-12">
         <div class="container mx-auto px-6 md:px-12">
-            <h2 class="text-3xl font-bold text-gold mb-8 italic text-center">Proteja seu Terreno com Engenharia de Elite</h2>
-            <p class="text-slate-400 mb-6 max-w-xl mx-auto font-light text-center">Contenções estáveis e seguras executadas por especialistas em solo paulistano.</p>
-            <div class="mb-10 text-center">
-                <a href="https://maps.app.goo.gl/vCa5htJMpNKrNxgp7" target="_blank" class="text-gold text-[10px] uppercase tracking-widest font-bold hover:underline">Sede Solojat Engenharia - São Paulo</a>
+            <div class="grid lg:grid-cols-4 gap-16 mb-24 text-left">
+                <div class="lg:col-span-1">
+                    <img src="../assets/img/logo.png" alt="Solojat Engenharia" class="h-[64px] mb-8 w-auto object-contain rounded-xl">
+                    <p class="text-xs text-slate-400 leading-relaxed italic text-left">Engenharia geotécnica com rigor normativo e precisão técnica. Sede em São Paulo, atendendo toda a Grande SP.</p>
+                </div>
+                <div>
+                    <h4 class="text-gold font-bold uppercase text-[11px] mb-6 tracking-widest text-left">Navegação</h4>
+                    <ul class="space-y-3 list-none p-0 text-left">
+                        <li><a href="../sondagem-de-solo-spt/" class="hover:text-gold transition-colors text-decoration-none text-slate-400 text-xs">Sondagem SPT</a></li>
+                        <li><a href="../sondagem-ambiental/" class="hover:text-gold transition-colors text-decoration-none text-slate-400 text-xs">Sondagem Ambiental</a></li>
+                        <li><a href="../muro-de-arrimo/" class="hover:text-gold transition-colors text-decoration-none text-slate-400 text-xs">Muro de Arrimo</a></li>
+                        <li><a href="../reforco-de-fundacao/" class="hover:text-gold transition-colors text-decoration-none text-slate-400 text-xs font-bold">Reforço de Fundação</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-gold font-bold uppercase text-[11px] mb-6 tracking-widest text-left">Contato</h4>
+                    <p class="text-xs text-slate-400 mb-2">matiasempreiteiro07@gmail.com</p>
+                    <p class="text-xs text-slate-400 mb-4">(11) 96318-2364</p>
+                    <p class="text-[10px] text-white/30 uppercase tracking-widest">CNPJ: 63.210.544/0001-06</p>
+                </div>
+                <div class="lg:col-span-1 text-left">
+                    <h4 class="text-gold font-bold uppercase text-[11px] mb-6 tracking-widest">Localização</h4>
+                    <p class="text-xs text-slate-400 mb-6 italic">Avenida Sapopemba, 18355 - Vila Ester, Sao Paulo</p>
+                    <a href="https://maps.app.goo.gl/vCa5htJMpNKrNxgp7" target="_blank" class="text-gold text-[10px] font-bold uppercase tracking-widest hover:underline text-decoration-none">Ver no Google Maps</a>
+                </div>
             </div>
-            <a href="https://wa.me/5511963182364?text=Olá!%20Vim%20pelo%20site%20da%20Solojat%20e%20gostaria%20de%20solicitar%20um%20orçamento%20para%20Solo%20Grampeado." class="btn-minimal btn-primary py-4 px-12 text-decoration-none font-bold">Solicitar Orçamento de Solo Grampeado</a>
-            <div class="mt-20 pt-8 border-t border-white/5 text-[10px] text-white/20 uppercase tracking-[0.4em] text-center">
+            <div class="border-t border-white/5 pt-8 text-center text-[10px] text-white/20 uppercase tracking-[0.4em]">
                 &copy; 2026 Solojat Engenharia Geotécnica &bull; Todos os direitos reservados.
             </div>
         </div>
     </footer>
 
+    <!-- Scripts de Rastreamento e Funcionalidades -->
     <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') { window.location = url; }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-18107504988/gQXKCIut96AcENyyqrpD',
+          'value': 1.0,
+          'currency': 'BRL',
+          'event_callback': callback
+      });
+      return false;
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuContainer = document.getElementById('mobile-menu-container');
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuContainer.classList.toggle('hidden');
+            });
+        }
+
+        // WhatsApp Conversion
+        document.querySelectorAll('a[href*="whatsapp"], a[href*="wa.me"]').forEach(function (e) {
+            e.addEventListener('click', function () {
+                gtag('event', 'conversion', {'send_to': 'AW-18107504988/gQXKCIut96AcENyyqrpD'});
+            });
+        });
+
+        // Animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, { threshold: 0.15 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
     </script>
 </body>
 </html>
