@@ -143,12 +143,6 @@
         #mobile-menu-container.open {
             display: block;
         }
-
-        /* Ajuste para o menu transparente não sumir no scroll ou sobrepor conteúdo branco */
-        header.scrolled {
-            background-color: rgba(10, 25, 47, 0.95);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
     </style>
 
     <!-- Google tag (gtag.js) -->
@@ -162,17 +156,17 @@
 </head>
 <body class="bg-white">
 
-    <!-- Cabeçalho Transparente -->
-    <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300">
+    <!-- Cabeçalho Barra Branca -->
+    <header id="main-header" class="sticky top-0 left-0 w-full z-50 bg-white border-b border-slate-100 transition-all duration-300">
         <div class="container mx-auto px-6 md:px-12 flex justify-between items-center py-5">
             <a href="/" class="flex items-center text-decoration-none">
-                <!-- Logotipo aumentado em mais 10% (h-[58px] -> h-[64px] | md:h-[72px] -> md:h-[80px]) -->
+                <!-- Logotipo aumentado e fundo transparente da imagem preservado -->
                 <img src="/assets/img/logo.png" alt="Solojat Engenharia" class="h-[64px] md:h-[80px] w-auto object-contain">
             </a>
             
-            <!-- Menu Desktop - Letras Brancas -->
+            <!-- Menu Desktop - Texto Navy/70 -->
             <nav class="hidden lg:flex space-x-10 items-center">
-                <div class="flex space-x-8 text-[10px] font-bold uppercase tracking-[0.2em] text-white">
+                <div class="flex space-x-8 text-[10px] font-bold uppercase tracking-[0.2em] text-navy/70">
                     <a href="/" class="hover:text-gold transition-colors text-decoration-none">Início</a>
                     <a href="/sondagem-de-solo-spt/" class="hover:text-gold transition-colors text-decoration-none">Sondagem de Solo</a>
                     
@@ -190,18 +184,18 @@
                             <a href="/reforco-de-fundacao/" class="block px-6 py-2 hover:bg-slate-50 hover:text-gold transition-colors text-navy text-xs uppercase font-bold text-decoration-none">Reforço de Fundação</a>
                         </div>
                     </div>
-                    <a href="/empresa/" class="hover:text-gold transition-colors text-decoration-none font-bold">Empresa</a>
+                    <a href="/empresa/" class="hover:text-gold transition-colors text-decoration-none font-bold text-navy">Empresa</a>
                 </div>
-                <a href="/contato/" class="bg-navy text-white px-6 py-2 text-[10px] font-bold uppercase tracking-widest hover:bg-gold hover:text-navy transition-all text-decoration-none border border-white/10">Orçamento</a>
+                <a href="/contato/" class="bg-navy text-white px-6 py-2 text-[10px] font-bold uppercase tracking-widest hover:bg-gold hover:text-navy transition-all text-decoration-none">Orçamento</a>
             </nav>
 
-            <!-- Botão Menu Mobile - Branco -->
-            <button id="mobile-menu-btn" class="lg:hidden text-white p-2">
+            <!-- Botão Menu Mobile - Navy -->
+            <button id="mobile-menu-btn" class="lg:hidden text-navy p-2">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
 
-        <!-- Contêiner do Menu Mobile com Correção de Rolagem -->
+        <!-- Contêiner do Menu Mobile -->
         <div id="mobile-menu-container" class="hidden lg:hidden bg-white border-t border-slate-100 max-h-[70vh] overflow-y-auto">
             <nav class="flex flex-col p-6 space-y-4">
                 <a href="/" class="text-xs font-bold uppercase tracking-widest text-navy">Início</a>
@@ -367,7 +361,6 @@
         <div class="container mx-auto px-6 md:px-12">
             <div class="grid lg:grid-cols-4 gap-16 mb-24 text-left">
                 <div class="lg:col-span-1">
-                    <!-- Logotipo aumentado em 10% adicional (h-[58px] -> h-[64px]) -->
                     <img src="/assets/img/logo.png" alt="Solojat Engenharia" class="h-[64px] mb-8 w-auto object-contain">
                     <p class="text-xs text-slate-400 leading-relaxed italic text-left">Engenharia geotécnica com rigor normativo e precisão técnica. Sede em São Paulo, atendendo toda a Grande SP.</p>
                 </div>
@@ -427,16 +420,6 @@
                 mobileMenuContainer.classList.toggle('hidden');
             });
         }
-
-        // Mudança de cor do menu no scroll para manter legibilidade
-        const header = document.getElementById('main-header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
 
         // Ouvinte único para cliques em links de WhatsApp
         document.querySelectorAll('a[href*="whatsapp"], a[href*="wa.me"]').forEach(function (link) {
