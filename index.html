@@ -22,10 +22,10 @@
       "logo": "https://solojat.com.br/assets/img/logo.png",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Rua Pedra Azul, 648",
+        "streetAddress": "Avenida Sapopemba, 18355",
         "addressLocality": "São Paulo",
         "addressRegion": "SP",
-        "postalCode": "04109-000",
+        "postalCode": "03989-000",
         "addressCountry": "BR"
       }
     }
@@ -138,6 +138,11 @@
         .hero-overlay {
             background: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.8));
         }
+
+        /* Mobile Menu State */
+        #mobile-menu-container.open {
+            display: block;
+        }
     </style>
 
     <!-- Google tag (gtag.js) -->
@@ -155,9 +160,11 @@
     <header class="bg-white border-b border-slate-100 sticky top-0 z-50">
         <div class="container mx-auto px-6 md:px-12 flex justify-between items-center py-5">
             <a href="/" class="flex items-center text-decoration-none">
-                <img src="/assets/img/logo.png" alt="Solojat Engenharia" class="h-10 md:h-12 w-auto object-contain">
+                <!-- Logotipo aumentado em 20% (h-10 -> h-12 | md:h-12 -> md:h-[60px]) -->
+                <img src="/assets/img/logo.png" alt="Solojat Engenharia" class="h-12 md:h-[60px] w-auto object-contain">
             </a>
             
+            <!-- Menu Desktop -->
             <nav class="hidden lg:flex space-x-10 items-center">
                 <div class="flex space-x-8 text-[10px] font-bold uppercase tracking-[0.2em] text-navy/70">
                     <a href="/" class="hover:text-gold transition-colors text-decoration-none">Início</a>
@@ -180,6 +187,28 @@
                     <a href="/empresa/" class="hover:text-gold transition-colors text-decoration-none font-bold text-navy">Empresa</a>
                 </div>
                 <a href="/contato/" class="bg-navy text-white px-6 py-2 text-[10px] font-bold uppercase tracking-widest hover:bg-gold hover:text-navy transition-all text-decoration-none">Orçamento</a>
+            </nav>
+
+            <!-- Botão Menu Mobile -->
+            <button id="mobile-menu-btn" class="lg:hidden text-navy p-2">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+
+        <!-- Contêiner do Menu Mobile -->
+        <div id="mobile-menu-container" class="hidden lg:hidden bg-white border-t border-slate-100">
+            <nav class="flex flex-col p-6 space-y-4">
+                <a href="/" class="text-xs font-bold uppercase tracking-widest text-navy">Início</a>
+                <a href="/sondagem-de-solo-spt/" class="text-xs font-bold uppercase tracking-widest text-navy">Sondagem de Solo</a>
+                <div class="space-y-3 pl-4 border-l border-gold/30">
+                    <span class="text-[10px] uppercase text-slate-400 font-bold tracking-widest block">Nossos Serviços</span>
+                    <a href="/sondagem-de-solo-spt/" class="block text-[11px] font-bold text-navy/70">Sondagem SPT</a>
+                    <a href="/sondagem-ambiental/" class="block text-[11px] font-bold text-navy/70">Sondagem Ambiental</a>
+                    <a href="/muro-de-arrimo/" class="block text-[11px] font-bold text-navy/70">Muro de Arrimo</a>
+                    <a href="/reforco-de-fundacao/" class="block text-[11px] font-bold text-navy/70">Reforço de Fundação</a>
+                </div>
+                <a href="/empresa/" class="text-xs font-bold uppercase tracking-widest text-navy">Empresa</a>
+                <a href="/contato/" class="bg-navy text-white text-center py-3 text-xs font-bold uppercase tracking-widest">Solicitar Orçamento</a>
             </nav>
         </div>
     </header>
@@ -330,8 +359,9 @@
         <div class="container mx-auto px-6 md:px-12">
             <div class="grid lg:grid-cols-4 gap-16 mb-24 text-left">
                 <div class="lg:col-span-1">
-                    <img src="/assets/img/logo.png" alt="Solojat Engenharia" class="h-10 mb-8 w-auto object-contain" style="filter: invert(1) grayscale(1) brightness(1.8); mix-blend-mode: screen;">
-                    <p class="text-xs text-slate-400 leading-relaxed italic text-left">Engenharia geotécnica com rigor normativo e precisão técnica. Sede na Aclimação, atendendo toda a Grande SP.</p>
+                    <!-- Logotipo aumentado em 20% (h-10 -> h-12) -->
+                    <img src="/assets/img/logo.png" alt="Solojat Engenharia" class="h-12 mb-8 w-auto object-contain" style="filter: invert(1) grayscale(1) brightness(1.8); mix-blend-mode: screen;">
+                    <p class="text-xs text-slate-400 leading-relaxed italic text-left">Engenharia geotécnica com rigor normativo e precisão técnica. Sede em São Paulo, atendendo toda a Grande SP.</p>
                 </div>
                 <div>
                     <h4 class="text-gold font-bold uppercase text-[11px] mb-6 tracking-widest text-left">Navegação</h4>
@@ -346,11 +376,11 @@
                     <h4 class="text-gold font-bold uppercase text-[11px] mb-6 tracking-widest text-left">Contato</h4>
                     <p class="text-xs text-slate-400 mb-2">matiasempreiteiro07@gmail.com</p>
                     <p class="text-xs text-slate-400 mb-4">(11) 96318-2364</p>
-                    <p class="text-[10px] text-white/30 uppercase tracking-widest">CNPJ: 39.440.546/0001-07</p>
+                    <p class="text-[10px] text-white/30 uppercase tracking-widest">CNPJ: 63.210.544/0001-06</p>
                 </div>
                 <div class="lg:col-span-1 text-left">
                     <h4 class="text-gold font-bold uppercase text-[11px] mb-6 tracking-widest">Localização</h4>
-                    <p class="text-xs text-slate-400 mb-6 italic">Rua Pedra Azul, 648 - Aclimação, São Paulo - SP</p>
+                    <p class="text-xs text-slate-400 mb-6 italic">Avenida Sapopemba, 18355 - Vila Ester, Sao Paulo</p>
                     <a href="https://maps.app.goo.gl/vCa5htJMpNKrNxgp7" target="_blank" class="text-gold text-[10px] font-bold uppercase tracking-widest hover:underline text-decoration-none">Ver no Google Maps</a>
                 </div>
             </div>
@@ -378,8 +408,19 @@
       return false;
     }
 
-    // Ouvinte único para cliques em links de WhatsApp (wa.me ou whatsapp.com)
+    // Funcionalidades de Interface
     document.addEventListener('DOMContentLoaded', function () {
+        // Toggle Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuContainer = document.getElementById('mobile-menu-container');
+
+        if (mobileMenuBtn && mobileMenuContainer) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuContainer.classList.toggle('hidden');
+            });
+        }
+
+        // Ouvinte único para cliques em links de WhatsApp
         document.querySelectorAll('a[href*="whatsapp"], a[href*="wa.me"]').forEach(function (link) {
             link.addEventListener('click', function () {
                 console.log('Clique WhatsApp detectado');
